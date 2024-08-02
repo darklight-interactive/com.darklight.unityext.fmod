@@ -103,10 +103,10 @@ namespace Darklight.UnityExt.FMOD
             instance.release();
         }
 
-        public static string GetInstantiatedEventPath(FMOD.Studio.EventInstance instance)
+        public static string GetInstantiatedEventPath(EventInstance instance)
         {
             string result;
-            FMOD.Studio.EventDescription description;
+            EventDescription description;
 
             instance.getDescription(out description);
             description.getPath(out result);
