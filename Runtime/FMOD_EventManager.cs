@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace Darklight.UnityExt.FMOD
+namespace Darklight.UnityExt.FMODExt
 {
     /// <summary>
     ///  This is the main singleton class that manages all FMOD audio events and buses.
@@ -33,11 +33,9 @@ namespace Darklight.UnityExt.FMOD
 
 
         [Header("FMOD Buses & Banks")]
-        [ShowOnly]
-        public FMOD.RESULT busListOk = FMOD.RESULT.ERR_UNIMPLEMENTED;
+        [ShowOnly] public FMOD.RESULT busListOk = FMOD.RESULT.ERR_UNIMPLEMENTED;
 
-        [ShowOnly]
-        public FMOD.RESULT systemIsOk = FMOD.RESULT.ERR_UNIMPLEMENTED;
+        [ShowOnly] public FMOD.RESULT systemIsOk = FMOD.RESULT.ERR_UNIMPLEMENTED;
 
         [ShowOnly]
         public bool allBanksLoaded = false;
