@@ -15,7 +15,7 @@ namespace Darklight.UnityExt.FMODExt
     ///  This is the main singleton class that manages all FMOD audio events and buses.
     /// </summary>
     [RequireComponent(typeof(StudioEventEmitter))]
-    public class FMOD_EventManager : MonoBehaviourSingleton<FMOD_EventManager>
+    public class FMODExt_EventManager : MonoBehaviourSingleton<FMODExt_EventManager>
     {
         private StudioEventEmitter _studioEventEmitter => GetComponent<StudioEventEmitter>();
         public static EventInstance CurrentSongInstance { get; private set; }
@@ -25,8 +25,8 @@ namespace Darklight.UnityExt.FMODExt
         // ====================== FMOD EVENT OBJECT REFERENCES ====================== >>
 
         [Header("FMOD Event Objects")]
-        public FMOD_MusicObject backgroundMusic;
-        public FMOD_SFXObject generalSFX;
+        public FMODExt_MusicObject backgroundMusic;
+        public FMODExt_SFXObject generalSFX;
 
 
         #region == [[ BUSES & BANKS ]] ========================================================
@@ -130,7 +130,7 @@ namespace Darklight.UnityExt.FMODExt
         {
             while (true)
             {
-                FMOD_EventManager.PlayOneShot(eventReference);
+                FMODExt_EventManager.PlayOneShot(eventReference);
                 yield return new WaitForSeconds(interval);
             }
         }

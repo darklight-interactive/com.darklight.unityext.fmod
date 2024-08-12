@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Darklight.UnityExt.Editor;
 using FMODUnity;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Darklight/FMOD/FMOD_MusicObject")]
-public class FMOD_MusicObject : ScriptableObject
+[CreateAssetMenu(menuName = "Darklight/FMODExt/MusicObject")]
+public class FMODExt_MusicObject : ScriptableObject
 {
 
     /// <summary>
@@ -13,12 +14,12 @@ public class FMOD_MusicObject : ScriptableObject
     [System.Serializable]
     public class BackgroundMusicEvent
     {
-        public SceneAsset scene;
+        public SceneObject scene;
         public EventReference eventReference;
 
         public string GetSceneName()
         {
-            return scene.name;
+            return scene;
         }
     }
 
