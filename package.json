@@ -1,6 +1,6 @@
 {
   "name": "com.darklight.unityext.fmod",
-  "version": "0.1.0",
+  "version": "0.1.01",
   "displayName": "Darklight UnityExt for FMOD",
   "description": "The Core Unity Extension Library for Darklight Interactive Studios",
   "unity": "2023.2",
