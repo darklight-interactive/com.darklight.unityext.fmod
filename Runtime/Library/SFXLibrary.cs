@@ -3,7 +3,7 @@ using FMODUnity;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Darklight/FMODExt/SFXObject")]
-public class FMODExt_SFXObject : ScriptableObject
+public class SFXLibrary : ScriptableObject
 {
     [Header("General Interaction SFX")]
     public EventReference startInteraction;

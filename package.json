@@ -1,12 +1,16 @@
 {
-  "name": "com.darklight.unityext.fmod",
+  "name": "com.darklight.fmod",
   "version": "0.1.1",
-  "displayName": "Darklight UnityExt for FMOD",
-  "description": "The Core Unity Extension Library for Darklight Interactive Studios",
+  "displayName": "Darklight FMOD Library",
+  "description": "The FMOD Unity Extension Library for Darklight Interactive Studios",
   "unity": "2023.2",
   "author": {
     "name": "Sky Casey { skysfalling }",
-    "email": "skysfalling22@gmail.com",
-    "url": "https://www.skysfalling.online"
+    "url": "https://www.skysfalling.online",
+    "email": "skysfalling22@gmail.com"
+  },
+  "dependencies": {
+    "com.dbrizov.naughtyattributes": "2.1.4",
+    "com.darklight.core": "0.2.11"
   }
 }
