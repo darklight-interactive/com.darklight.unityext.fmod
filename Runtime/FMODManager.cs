@@ -18,7 +18,6 @@ namespace Darklight.FMODExt
     /// This is the main singleton class that loads all FMOD audio events and buses.
     /// This class also provides static methods for handling FMOD components.
     /// </summary>
-    [RequireComponent(typeof(StudioEventEmitter))]
     public class FMODManager : MonoBehaviourSingleton<FMODManager>
     {
         public const string RESOURCE_PATH = AssetUtility.RESOURCE_FILEPATH + "/FMODExt";
@@ -43,8 +42,13 @@ namespace Darklight.FMODExt
         List<FMODBus> _busData;
         
         #region == [[ MONOBEHAVIOUR SINGLETON METHODS ]] ==================================== >>
+
+        void Awake()
+        {
+            LoadBanksAndBuses();
+        }
         
-        public void Update()
+        void Update()
         {
             // << UPDATE BUS DATA >>
             foreach (FMODBus bus in _busData)
@@ -90,6 +94,8 @@ namespace Darklight.FMODExt
                     );
                 }
             }
+            
+            Debug.Log("FMOD Manager Loaded. Banks: " + _bankData.Count + ", Buses: " + _busData.Count + "");
             yield return null;
         }
         

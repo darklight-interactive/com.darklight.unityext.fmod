@@ -12,6 +12,24 @@ namespace Darklight.FMODExt
         [SerializeField]
         private SerializedDictionary<SceneObject, EventReference> _sceneEventReferences = new SerializedDictionary<SceneObject, EventReference>();
 
-        public EventReference GetBackgroundMusicByScene(string sceneName) => _sceneEventReferences[sceneName];
+        public EventReference GetBackgroundMusicByScene(string sceneName)
+        {
+            if (string.IsNullOrEmpty(sceneName)) return new EventReference();
+            
+            return _sceneEventReferences.TryGetValue(sceneName, out var eventRef) 
+                ? eventRef 
+                : new EventReference();
+        }
+        
+        public string PrintSceneNames()
+        {
+            string result = "";
+            foreach (KeyValuePair<SceneObject, EventReference> kvp in _sceneEventReferences)
+            {
+                result += kvp.Key + ": " + kvp.Value + "\n";
+            }
+            return result;
+        }
+        
     }
 }
